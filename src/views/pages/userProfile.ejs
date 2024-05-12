@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <title><%= name %></title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main-header">
+        <img src="" />
+        <h1><%= name %></h1>
+        <p><%= designation %></p>
+        <p><%= profile %></p>
+      </div>
+
+      <div class="work-exp-section">
+        <h4>Work Experience</h4>
+        <% for(var i=0; i<companies.length; i++) {%>
+        <div class="sub-sections">
+          <h6 class="company-name"><%= companies[i].name %></h6>
+          <p class="subtitle-small"><%= companies[i].tenure %></p>
+          <ul>
+            <% for(var j=0; j<companies[i].details.length; j++) {%>
+            <li class="bulleted-text">
+              <%= companies[i].details[j] %>
+            </li>
+            <% } %>
+          </ul>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>
